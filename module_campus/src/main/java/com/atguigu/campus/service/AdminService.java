@@ -1,0 +1,22 @@
+package com.atguigu.campus.service;
+
+import com.atguigu.campus.pojo.Admin;
+import com.atguigu.campus.pojo.Grade;
+import com.atguigu.campus.pojo.LoginForm;
+import com.baomidou.mybatisplus.core.metadata.IPage;
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
+import com.baomidou.mybatisplus.extension.service.IService;
+
+/**
+* @author WOLF
+* @description 针对表【tb_admin】的数据库操作Service
+* @createDate 2023-03-08 21:33:45
+*/
+public interface AdminService extends IService<Admin> {
+
+    Admin login(LoginForm loginForm);
+
+    Admin getAdminById(Long userId);
+
+    IPage<Admin> getAdminByOpr(Page<Admin> page, String adminName);
+}
